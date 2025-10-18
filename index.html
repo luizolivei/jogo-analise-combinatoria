@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Missão Combinatória 🚀</title>
+    <meta name="description" content="Jogo point-and-click de Análise Combinatória ambientado na SpaceX: resolva missões e monte a tripulação perfeita." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+    <!-- TELA INICIAL -->
+    <section id="screen-start" class="screen active">
+        <div class="card card-start">
+            <div class="card-content">
+                <h2>Missão Combinatória <span aria-hidden="true">🚀</span></h2>
+                <p>Você é o comandante de uma expedição da SpaceX. Monte equipes respondendo <strong>problemas de combinação</strong>.</p>
+                <ul class="requirements">
+                    <li>🛰️ Jornada com <strong>três níveis de missão</strong>: fácil, médio e difícil.</li>
+                    <li>🎯 Desafios com diferentes controles de bordo: múltipla escolha, respostas digitadas e ajuste por controle deslizante.</li>
+                    <li>✨ O seu sucesso nas resposta define o progresso da missão.</li>
+                </ul>
+                <div class="actions">
+                    <button id="btn-start" class="btn primary">Iniciar missão</button>
+                    <button id="btn-how" class="btn ghost">Como jogar</button>
+                </div>
+            </div>
+            <figure class="card-illustration" aria-hidden="true">
+                <img src="assets/home.png" alt="Astronautas animados flutuando no espaço" loading="lazy" />
+            </figure>
+        </div>
+    </section>
+
+    <!-- TELA COMO JOGAR -->
+    <section id="screen-how" class="screen">
+        <div class="card">
+            <h2>Como jogar</h2>
+            <ol class="howto">
+                <li>Leia o enunciado (sempre envolve <strong>combinações</strong>).</li>
+                <li>Siga as instruções da missão: clique, digite ou ajuste o controle deslizante.</li>
+                <li>Receba feedback de como está o andamento da missão no topo da pagina.</li>
+                <li>Conclua as missões para ver sua pontuação final e um resumo com dicas.</li>
+            </ol>
+            <button id="btn-back-home" class="btn">Voltar ao hangar</button>
+        </div>
+    </section>
+
+    <!-- TELA DAS MISSÕES -->
+    <section id="screen-level" class="screen">
+        <header class="hud">
+            <div class="hud-left">Missão <span id="level-index">1</span>/<span id="level-total">2</span></div>
+            <div class="hud-right">Pontuação: <span id="score">0</span></div>
+        </header>
+        <div class="progress-track" aria-hidden="true">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div id="mission-progress" class="mission-progress">
+            <div class="mission-progress-header">
+                <span class="mission-progress-title">Controle de missão</span>
+                <span id="mission-goal" class="mission-progress-goal">Integridade da missão: 100%</span>
+            </div>
+            <div id="mission-status-bar" class="mission-status-bar" role="list"></div>
+            <p id="mission-status-feedback" class="mission-status-feedback" aria-live="polite"></p>
+        </div>
+
+        <div class="card card-question">
+            <div class="level-heading">
+                <span id="level-badge" class="badge">Fácil</span>
+                <h2 id="level-title">Missão 1 – Problema Fácil</h2>
+            </div>
+            <figure id="level-art" class="level-art" aria-hidden="true"></figure>
+            <p id="level-statement" class="statement"></p>
+
+            <div id="options" class="interaction-zone" role="list"></div>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+
+            <div class="actions">
+                <button id="btn-next" class="btn primary" disabled>Próxima missão</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TELA FINAL -->
+    <section id="screen-end" class="screen">
+        <div class="card card-end">
+            <div class="card-content">
+                <h2 id="final-heading">Missão concluída! ✨</h2>
+                <figure id="final-visual" class="final-visual" aria-hidden="true">
+                    <img src="assets/sucess.png" alt="Astronauta comemorando com bandeira" loading="lazy" />
+                </figure>
+                <p id="final-status" class="final-status"></p>
+                <p>Relatório de voo: <strong><span id="final-score">0</span></strong> / <span id="final-total">6</span></p>
+                <div id="summary" class="summary"></div>
+                <div class="actions">
+                    <button id="btn-restart" class="btn">Reiniciar missão</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
