@@ -1,4 +1,3 @@
-// Utilidades de Combinatória
 function fatorial(n) {
     if (n < 0) return NaN;
     let r = 1;
@@ -855,7 +854,7 @@ function finalizar() {
     } else {
         switch (erros) {
             case 0:
-                heading = 'Missão concluída com o maior sucesso! 🌟';
+                heading = 'Missão concluída com o maior sucesso!';
                 status = 'Missão concluída com o maior sucesso. Controle aclama a precisão impecável da equipe.';
                 statusTone = 'success';
                 resumo = 'Você conduziu a expedição perfeita e elevou o prestígio da tripulação.';
